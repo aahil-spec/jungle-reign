@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgn1bvrr8o30i"
-path="res://.godot/imported/jungle_tree_2.png-8d6bb6a7d24e2f9c089a789d4e80d898.ctex"
+uid="uid://csxap0j61ujqc"
+path.s3tc="res://.godot/imported/jungle_tree_0.jpg-5d171786af3c6cbb89ba5fc52d335a9f.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "deca61b4ae26becb2316e8fb69fb0e16"
+"md5": "05b420172203d3ca49effa13b0e7915e"
 }
 
 [deps]
 
-source_file="res://assets/jungle_tree_2.png"
-dest_files=["res://.godot/imported/jungle_tree_2.png-8d6bb6a7d24e2f9c089a789d4e80d898.ctex"]
+source_file="res://assets/models/jungle_tree_0.jpg"
+dest_files=["res://.godot/imported/jungle_tree_0.jpg-5d171786af3c6cbb89ba5fc52d335a9f.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

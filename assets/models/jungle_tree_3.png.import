@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csdotdsufwgu"
-path.s3tc="res://.godot/imported/tree_branch_1.png-4db28e071cb452f0cff7a412bac7676f.s3tc.ctex"
+uid="uid://dq86c4nuup6gv"
+path.s3tc="res://.godot/imported/jungle_tree_3.png-e1456dd752f8d8749d4ea6bc6c1ba413.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f43dcb2fe1c5f26c6863bb4595fe252d"
+"md5": "d8dc08083034b28fa3959447a9ec1858"
 }
 
 [deps]
 
-source_file="res://assets/tree_branch_1.png"
-dest_files=["res://.godot/imported/tree_branch_1.png-4db28e071cb452f0cff7a412bac7676f.s3tc.ctex"]
+source_file="res://assets/models/jungle_tree_3.png"
+dest_files=["res://.godot/imported/jungle_tree_3.png-e1456dd752f8d8749d4ea6bc6c1ba413.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/jungle_tree_3.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

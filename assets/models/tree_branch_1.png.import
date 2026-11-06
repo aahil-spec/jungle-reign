@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcdquonltaaaj"
-path="res://.godot/imported/jungle_tree_1.png-9cfe963d17c9e099bec686f67095ea63.ctex"
+uid="uid://csdotdsufwgu"
+path.s3tc="res://.godot/imported/tree_branch_1.png-45d4470ca3d8daafa672f8fcbb121e2d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "0231a6cee50dce1f9cfc63132752f001"
+"md5": "f43dcb2fe1c5f26c6863bb4595fe252d"
 }
 
 [deps]
 
-source_file="res://assets/jungle_tree_1.png"
-dest_files=["res://.godot/imported/jungle_tree_1.png-9cfe963d17c9e099bec686f67095ea63.ctex"]
+source_file="res://assets/models/tree_branch_1.png"
+dest_files=["res://.godot/imported/tree_branch_1.png-45d4470ca3d8daafa672f8fcbb121e2d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

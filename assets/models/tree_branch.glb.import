@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bm3fdp6a0564o"
-path="res://.godot/imported/wooden_spear.glb-9e16797499a4c099b0b2694c10a75f9b.scn"
+uid="uid://drs6i5nhulpc6"
+path="res://.godot/imported/tree_branch.glb-5d90a2aef31c888eb1f4bcd8a92feb14.scn"
 
 [deps]
 
-source_file="res://assets/wooden_spear.glb"
-dest_files=["res://.godot/imported/wooden_spear.glb-9e16797499a4c099b0b2694c10a75f9b.scn"]
+source_file="res://assets/models/tree_branch.glb"
+dest_files=["res://.godot/imported/tree_branch.glb-5d90a2aef31c888eb1f4bcd8a92feb14.scn"]
 
 [params]
 

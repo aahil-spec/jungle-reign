@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5ybcnhe5k1eo"
-path="res://.godot/imported/callander_-_pvs_grave_rob_roy_way.glb-d433938115907b8fd13dd0c7b95016b7.scn"
+uid="uid://lr2p3m3jj2t7"
+path="res://.godot/imported/end_of_the_path.glb-2025301e36e347628fbd33df26e2d403.scn"
 
 [deps]
 
-source_file="res://assets/callander_-_pvs_grave_rob_roy_way.glb"
-dest_files=["res://.godot/imported/callander_-_pvs_grave_rob_roy_way.glb-d433938115907b8fd13dd0c7b95016b7.scn"]
+source_file="res://assets/models/end_of_the_path.glb"
+dest_files=["res://.godot/imported/end_of_the_path.glb-2025301e36e347628fbd33df26e2d403.scn"]
 
 [params]
 

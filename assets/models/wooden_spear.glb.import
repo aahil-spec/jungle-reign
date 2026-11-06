@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://eq05dokv07vm"
-path="res://.godot/imported/ruin_wall.glb-8c883a20be6d5dd3befb16e3865022f5.scn"
+uid="uid://bm3fdp6a0564o"
+path="res://.godot/imported/wooden_spear.glb-73dc4428885958072df7a50aa1e47489.scn"
 
 [deps]
 
-source_file="res://assets/ruin_wall.glb"
-dest_files=["res://.godot/imported/ruin_wall.glb-8c883a20be6d5dd3befb16e3865022f5.scn"]
+source_file="res://assets/models/wooden_spear.glb"
+dest_files=["res://.godot/imported/wooden_spear.glb-73dc4428885958072df7a50aa1e47489.scn"]
 
 [params]
 

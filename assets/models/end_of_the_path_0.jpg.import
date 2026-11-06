@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uwnskoq4r1er"
-path.s3tc="res://.godot/imported/end_of_the_path_0.jpg-fc03f0d74269071141e2036712b3a23d.s3tc.ctex"
+path.s3tc="res://.godot/imported/end_of_the_path_0.jpg-e8034e2e40a7803fdf85ce08710f6ed1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/end_of_the_path_0.jpg"
-dest_files=["res://.godot/imported/end_of_the_path_0.jpg-fc03f0d74269071141e2036712b3a23d.s3tc.ctex"]
+source_file="res://assets/models/end_of_the_path_0.jpg"
+dest_files=["res://.godot/imported/end_of_the_path_0.jpg-e8034e2e40a7803fdf85ce08710f6ed1.s3tc.ctex"]
 
 [params]
 

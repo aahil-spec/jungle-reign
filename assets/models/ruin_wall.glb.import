@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://lr2p3m3jj2t7"
-path="res://.godot/imported/end_of_the_path.glb-b8761be04d4fe8a28227bcc495b78a85.scn"
+uid="uid://eq05dokv07vm"
+path="res://.godot/imported/ruin_wall.glb-60db5124b4d4f71a049ceede70726fa1.scn"
 
 [deps]
 
-source_file="res://assets/end_of_the_path.glb"
-dest_files=["res://.godot/imported/end_of_the_path.glb-b8761be04d4fe8a28227bcc495b78a85.scn"]
+source_file="res://assets/models/ruin_wall.glb"
+dest_files=["res://.godot/imported/ruin_wall.glb-60db5124b4d4f71a049ceede70726fa1.scn"]
 
 [params]
 

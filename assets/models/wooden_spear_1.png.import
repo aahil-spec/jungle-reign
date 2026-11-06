@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csxap0j61ujqc"
-path.s3tc="res://.godot/imported/jungle_tree_0.jpg-958b185cde36d85a4a47a302f911f029.s3tc.ctex"
+uid="uid://dp7yeld0jsu6b"
+path.s3tc="res://.godot/imported/wooden_spear_1.png-b4cb6e303f94274ffd1820eeb87f107b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "05b420172203d3ca49effa13b0e7915e"
+"md5": "42c966d3c711f2f9671eb39f2c6918a8"
 }
 
 [deps]
 
-source_file="res://assets/jungle_tree_0.jpg"
-dest_files=["res://.godot/imported/jungle_tree_0.jpg-958b185cde36d85a4a47a302f911f029.s3tc.ctex"]
+source_file="res://assets/models/wooden_spear_1.png"
+dest_files=["res://.godot/imported/wooden_spear_1.png-b4cb6e303f94274ffd1820eeb87f107b.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/wooden_spear_1.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcfus0u66defl"
-path.s3tc="res://.godot/imported/egypt_column_0.png-544eaeb919b79a94aa2aae0e6401c4ac.s3tc.ctex"
+path.s3tc="res://.godot/imported/egypt_column_0.png-df95de1933f9a6e11a2e9997e061473a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/egypt_column_0.png"
-dest_files=["res://.godot/imported/egypt_column_0.png-544eaeb919b79a94aa2aae0e6401c4ac.s3tc.ctex"]
+source_file="res://assets/models/egypt_column_0.png"
+dest_files=["res://.godot/imported/egypt_column_0.png-df95de1933f9a6e11a2e9997e061473a.s3tc.ctex"]
 
 [params]
 

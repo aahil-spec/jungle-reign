@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl4j25i4s1lmd"
-path.s3tc="res://.godot/imported/ruin_wall_1.png-cb1f786f766b4f00ff3e212bb0ab0ed4.s3tc.ctex"
+uid="uid://b5uyrskldpk0m"
+path.s3tc="res://.godot/imported/wooden_spear_0.png-bae108570461f16c8dff429e908786ef.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0005f7b8579bdf209b717b0ae75047a2"
+"md5": "0728b2d87bbc10cfdb92d43493203f04"
 }
 
 [deps]
 
-source_file="res://assets/ruin_wall_1.png"
-dest_files=["res://.godot/imported/ruin_wall_1.png-cb1f786f766b4f00ff3e212bb0ab0ed4.s3tc.ctex"]
+source_file="res://assets/models/wooden_spear_0.png"
+dest_files=["res://.godot/imported/wooden_spear_0.png-bae108570461f16c8dff429e908786ef.s3tc.ctex"]
 
 [params]
 

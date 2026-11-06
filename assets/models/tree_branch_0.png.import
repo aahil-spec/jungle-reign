@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q4k470qnuqv"
-path.s3tc="res://.godot/imported/ruin_wall_0.png-a0c77a19709d4a1329bd51c7968c683d.s3tc.ctex"
+uid="uid://cfnmd7mofgy5v"
+path.s3tc="res://.godot/imported/tree_branch_0.png-64ef158f179a8885338bcf05c2390c7d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "75b8461a70463d7991193631a460c6b4"
+"md5": "695ee69872c4ae9109b6dbf3caea2ad7"
 }
 
 [deps]
 
-source_file="res://assets/ruin_wall_0.png"
-dest_files=["res://.godot/imported/ruin_wall_0.png-a0c77a19709d4a1329bd51c7968c683d.s3tc.ctex"]
+source_file="res://assets/models/tree_branch_0.png"
+dest_files=["res://.godot/imported/tree_branch_0.png-64ef158f179a8885338bcf05c2390c7d.s3tc.ctex"]
 
 [params]
 

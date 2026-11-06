@@ -32,7 +32,9 @@ func _physics_process(delta: float):
 	_handle_lane_switching(delta)
 	_handle_sliding(delta)
 	
-	velocity.z=-forward_speed
+	var current_speed=forward_speed*GameManager.current_speed_multiplier
+	velocity.z=-current_speed
+	GameManager.distance_travelled+=current_speed*delta
 	move_and_slide()
 	
 func _input(event:InputEvent):

@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dj6nf11ka2our"]
 
 [ext_resource type="Script" uid="uid://b6w5nk1ic5tt6" path="res://scripts/track/straight_segment.gd" id="1_3vvgm"]
-[ext_resource type="PackedScene" uid="uid://clynjoctqx3gx" path="res://assets/jungle_tree.glb" id="1_k5nas"]
-[ext_resource type="PackedScene" uid="uid://lr2p3m3jj2t7" path="res://assets/end_of_the_path.glb" id="2_5imb7"]
+[ext_resource type="PackedScene" uid="uid://clynjoctqx3gx" path="res://assets/models/jungle_tree.glb" id="1_k5nas"]
+[ext_resource type="PackedScene" uid="uid://lr2p3m3jj2t7" path="res://assets/models/end_of_the_path.glb" id="2_5imb7"]
 [ext_resource type="PackedScene" uid="uid://dpnx3psjm5j88" path="res://scenes/obstacles/rock_obstacle.tscn" id="2_k5nas"]
 [ext_resource type="PackedScene" uid="uid://cwbousaamtt6k" path="res://scenes/collectibles/coin.tscn" id="3_5imb7"]
-[ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/ruin_wall.glb" id="3_w0sup"]
-[ext_resource type="PackedScene" uid="uid://drs6i5nhulpc6" path="res://assets/tree_branch.glb" id="4_s8mxv"]
-[ext_resource type="PackedScene" uid="uid://bm3fdp6a0564o" path="res://assets/wooden_spear.glb" id="5_jn50n"]
+[ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/models/ruin_wall.glb" id="3_w0sup"]
+[ext_resource type="PackedScene" uid="uid://drs6i5nhulpc6" path="res://assets/models/tree_branch.glb" id="4_s8mxv"]
+[ext_resource type="PackedScene" uid="uid://bm3fdp6a0564o" path="res://assets/models/wooden_spear.glb" id="5_jn50n"]
 
 [node name="StraightSegment" type="Node3D" unique_id=395727918]
 script = ExtResource("1_3vvgm")

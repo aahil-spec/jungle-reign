@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clynjoctqx3gx"
-path="res://.godot/imported/jungle_tree.glb-1e16e44a0e3645dcae16e9e7b7138ac4.scn"
+uid="uid://d30niek1ggwn3"
+path="res://.godot/imported/egypt_column.glb-9c4fce74dab4456831691c0068d5ee15.scn"
 
 [deps]
 
-source_file="res://assets/jungle_tree.glb"
-dest_files=["res://.godot/imported/jungle_tree.glb-1e16e44a0e3645dcae16e9e7b7138ac4.scn"]
+source_file="res://assets/models/egypt_column.glb"
+dest_files=["res://.godot/imported/egypt_column.glb-9c4fce74dab4456831691c0068d5ee15.scn"]
 
 [params]
 

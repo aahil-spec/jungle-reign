@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drs6i5nhulpc6"
-path="res://.godot/imported/tree_branch.glb-c82540d28fd3e701be88a550b0851edc.scn"
+uid="uid://b5ybcnhe5k1eo"
+path="res://.godot/imported/callander_-_pvs_grave_rob_roy_way.glb-25b2a5ceb6f0dd99b3fa9ca1b7e20e41.scn"
 
 [deps]
 
-source_file="res://assets/tree_branch.glb"
-dest_files=["res://.godot/imported/tree_branch.glb-c82540d28fd3e701be88a550b0851edc.scn"]
+source_file="res://assets/models/callander_-_pvs_grave_rob_roy_way.glb"
+dest_files=["res://.godot/imported/callander_-_pvs_grave_rob_roy_way.glb-25b2a5ceb6f0dd99b3fa9ca1b7e20e41.scn"]
 
 [params]
 

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cvu5mhvi4ea83" path="res://scenes/player/player.tscn" id="1_e64el"]
 [ext_resource type="Script" uid="uid://c0wr62qcc3xo4" path="res://scripts/systems/track_manager.gd" id="2_ma5rq"]
 [ext_resource type="PackedScene" uid="uid://dj6nf11ka2our" path="res://scenes/track/straight_segment.tscn" id="3_e3dby"]
+[ext_resource type="PackedScene" uid="uid://blndh6tmhxax" path="res://scenes/ui/hud.tscn" id="4_gsayk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7aoy"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,3 +34,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6919532, 0)
 script = ExtResource("2_ma5rq")
 segment_scenes = Array[PackedScene]([ExtResource("3_e3dby")])
 player = NodePath("../Player")
+
+[node name="HUD" parent="." unique_id=806773985 instance=ExtResource("4_gsayk")]

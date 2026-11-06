@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://blndh6tmhxax"]
+
+[ext_resource type="FontFile" uid="uid://dyfad23d34hqm" path="res://assets/fonts/SofadiOne-Regular.ttf" id="1_0mwgc"]
+[ext_resource type="Script" uid="uid://c43gy2ykpe88l" path="res://scripts/systems/hud.gd" id="1_bo48s"]
+[ext_resource type="Texture2D" uid="uid://d3n5stj5f6two" path="res://assets/textures/golden-cryptocurrency-coin-vector-illustration.png" id="1_hqnrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2we"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.16862746, 0.16862746, 0.16862746, 0.5882353)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="HUD" type="CanvasLayer" unique_id=806773985]
+script = ExtResource("1_bo48s")
+
+[node name="SafeArea" type="MarginContainer" parent="." unique_id=1326120720]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRightLayout" type="VBoxContainer" parent="SafeArea" unique_id=1857542531]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CoinPanel" type="PanelContainer" parent="SafeArea/TopRightLayout" unique_id=233154645]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wh2we")
+
+[node name="CoinHBox" type="HBoxContainer" parent="SafeArea/TopRightLayout/CoinPanel" unique_id=975992837]
+layout_mode = 2
+alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="SafeArea/TopRightLayout/CoinPanel/CoinHBox" unique_id=1548929059]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1_hqnrr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinLabel" type="Label" parent="SafeArea/TopRightLayout/CoinPanel/CoinHBox" unique_id=123666026]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_0mwgc")
+theme_override_font_sizes/font_size = 36
+text = "0"
+
+[node name="ScorePanel" type="PanelContainer" parent="SafeArea/TopRightLayout" unique_id=1689504558]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wh2we")
+
+[node name="ScoreLabel" type="Label" parent="SafeArea/TopRightLayout/ScorePanel" unique_id=2143251972]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_0mwgc")
+theme_override_font_sizes/font_size = 36
+text = "Score: 0"
+
+[node name="TopLeftLayout" type="VBoxContainer" parent="SafeArea" unique_id=1754249447]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="DistancePanel" type="PanelContainer" parent="SafeArea/TopLeftLayout" unique_id=1999156200]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wh2we")
+
+[node name="DistanceLabel" type="Label" parent="SafeArea/TopLeftLayout/DistancePanel" unique_id=1920267266]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_0mwgc")
+theme_override_font_sizes/font_size = 36
+text = "Distance:0"
