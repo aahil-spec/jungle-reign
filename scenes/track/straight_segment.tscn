@@ -1,21 +1,117 @@
 [gd_scene format=3 uid="uid://dj6nf11ka2our"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_sejfb"]
-size = Vector3(6, 1, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sejfb"]
-size = Vector3(6, 1, 20)
+[ext_resource type="Script" uid="uid://b6w5nk1ic5tt6" path="res://scripts/track/straight_segment.gd" id="1_3vvgm"]
+[ext_resource type="PackedScene" uid="uid://clynjoctqx3gx" path="res://assets/jungle_tree.glb" id="1_k5nas"]
+[ext_resource type="PackedScene" uid="uid://lr2p3m3jj2t7" path="res://assets/end_of_the_path.glb" id="2_5imb7"]
+[ext_resource type="PackedScene" uid="uid://dpnx3psjm5j88" path="res://scenes/obstacles/rock_obstacle.tscn" id="2_k5nas"]
+[ext_resource type="PackedScene" uid="uid://cwbousaamtt6k" path="res://scenes/collectibles/coin.tscn" id="3_5imb7"]
+[ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/ruin_wall.glb" id="3_w0sup"]
+[ext_resource type="PackedScene" uid="uid://drs6i5nhulpc6" path="res://assets/tree_branch.glb" id="4_s8mxv"]
+[ext_resource type="PackedScene" uid="uid://bm3fdp6a0564o" path="res://assets/wooden_spear.glb" id="5_jn50n"]
 
 [node name="StraightSegment" type="Node3D" unique_id=395727918]
-
-[node name="Floor" type="MeshInstance3D" parent="." unique_id=1657823359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10)
-mesh = SubResource("BoxMesh_sejfb")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1195773358]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=777904695]
-shape = SubResource("BoxShape3D_sejfb")
+script = ExtResource("1_3vvgm")
+obstacle_scenes = Array[PackedScene]([ExtResource("2_k5nas")])
+coin_scene = ExtResource("3_5imb7")
 
 [node name="ExitPoint" type="Marker3D" parent="." unique_id=1897036118]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50.945045)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=860326391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -10)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1718569692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4662437, 0.2772827, -8.982513)
+size = Vector3(17.817558, 0.44543457, 67.39551)
+
+[node name="Models" type="Node3D" parent="." unique_id=4126702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.1770964, -10)
+
+[node name="Sketchfab_Scene17" parent="Models" unique_id=1075396125 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, 6.934963, 7.483141, 9.115289)
+
+[node name="Sketchfab_Scene18" parent="Models" unique_id=882052496 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, 6.934963, 7.483141, -2.0288)
+
+[node name="Sketchfab_Scene19" parent="Models" unique_id=129452224 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, 6.934963, 7.483141, -18.376797)
+
+[node name="Sketchfab_Scene20" parent="Models" unique_id=327183398 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, 6.934963, 7.483141, -32.46362)
+
+[node name="Sketchfab_Scene21" parent="Models" unique_id=1208692374 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, 6.934963, 7.483141, -44.689636)
+
+[node name="Sketchfab_Scene28" parent="Models" unique_id=658975773 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -6.8468266, 7.483141, -43.915344)
+
+[node name="Sketchfab_Scene23" parent="Models" unique_id=2099526115 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, 6.934963, 7.483141, -35.392204)
+
+[node name="Sketchfab_Scene31" parent="Models" unique_id=418258733 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, 6.934963, 7.483141, -10.498098)
+
+[node name="Sketchfab_Scene32" parent="Models" unique_id=536410984 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.821348, 7.483141, -10.498098)
+
+[node name="Sketchfab_Scene33" parent="Models" unique_id=904629702 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.821348, 7.483141, -1.6330872)
+
+[node name="Sketchfab_Scene34" parent="Models" unique_id=799718028 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.821348, 7.483141, 9.760031)
+
+[node name="Sketchfab_Scene35" parent="Models" unique_id=443134280 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.821348, 7.483141, -28.340513)
+
+[node name="Sketchfab_Scene36" parent="Models" unique_id=2060133585 instance=ExtResource("1_k5nas")]
+transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.821348, 7.483141, -24.069407)
+
+[node name="Sketchfab_Scene" parent="Models" unique_id=922855634 instance=ExtResource("2_5imb7")]
+transform = Transform3D(-6.4660373, 0, -0.050988924, -3.0727806e-05, 4.9699645, 0.011766292, 0.029342886, 0.005204536, -11.235979, -1.573, 7.232, -7.393)
+
+[node name="Sketchfab_Scene2" parent="Models" unique_id=1828458702 instance=ExtResource("3_w0sup")]
+transform = Transform3D(-0.7307763, 0, -1.3965355, 0, 2.1137655, 0, 20.516039, 0, -0.049744263, -6.525051, 7.211685, 6.071292)
+
+[node name="Sketchfab_Scene3" parent="Models" unique_id=1357251019 instance=ExtResource("3_w0sup")]
+transform = Transform3D(-0.66470975, 0, -1.4023374, 0, 2.1137655, 0, 18.661264, 0, -0.049950935, -5.4134774, 7.211685, -27.546614)
+
+[node name="Sketchfab_Scene4" parent="Models" unique_id=1090233517 instance=ExtResource("3_w0sup")]
+transform = Transform3D(-0.4748847, 0, -1.4238647, 0, 2.1137655, 0, 13.332059, 0, -0.050717726, 5.2137237, 7.211685, -24.662447)
+
+[node name="Sketchfab_Scene6" parent="Models" unique_id=1750295481 instance=ExtResource("3_w0sup")]
+transform = Transform3D(-0.18963374, 0, -1.4531853, 0, 2.1137655, 0, 5.3238363, 0, -0.05176212, 5.8069634, 7.211685, -40.308323)
+
+[node name="Sketchfab_Scene5" parent="Models" unique_id=1377228611 instance=ExtResource("3_w0sup")]
+transform = Transform3D(-0.7616271, 0, -1.3805331, 0, 2.1137655, 0, 21.382154, 0, -0.049174264, 4.2541385, 7.211685, 5.9470453)
+
+[node name="Sketchfab_Scene9" parent="Models" unique_id=343156411 instance=ExtResource("4_s8mxv")]
+transform = Transform3D(0.5259082, 0, 0, 0, 0.2942369, 0, 0, 0, 0.2942369, -4.09044, 6.1503177, 1.5541539)
+
+[node name="Sketchfab_Scene10" parent="Models" unique_id=1708171530 instance=ExtResource("4_s8mxv")]
+transform = Transform3D(0.5259082, 0, 0, 0, 0.2942369, 0, 0, 0, 0.2942369, -4.09044, 6.1503177, -32.23414)
+
+[node name="Sketchfab_Scene13" parent="Models" unique_id=1627503133 instance=ExtResource("5_jn50n")]
+transform = Transform3D(0.8215116, 0, 0, 0, 1, 0, 0, 0, 1, -4.3187084, 6.962429, -40.892517)
+
+[node name="ObstacleSpawns" type="Node3D" parent="." unique_id=1992065892]
+
+[node name="LeftSpawn" type="Marker3D" parent="ObstacleSpawns" unique_id=946862147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4180593, 0.19013059, 12.626137)
+
+[node name="CenterSpawn" type="Marker3D" parent="ObstacleSpawns" unique_id=1718581614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5228512, 0.23701036, 8.904562)
+
+[node name="RightSpawn" type="Marker3D" parent="ObstacleSpawns" unique_id=1017548090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9591885, 0.18178034, 10.552572)
+
+[node name="CoinSpawns" type="Node3D" parent="." unique_id=754628132]
+
+[node name="Coin1" type="Marker3D" parent="CoinSpawns" unique_id=1998445729]
+transform = Transform3D(0.99939084, 0.034899496, 0, -0.034899496, 0.99939084, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Coin2" type="Marker3D" parent="CoinSpawns" unique_id=4108302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Coin3" type="Marker3D" parent="CoinSpawns" unique_id=791682130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
