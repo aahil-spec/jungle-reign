@@ -1,20 +1,16 @@
 [gd_scene format=3 uid="uid://cwbousaamtt6k"]
 
 [ext_resource type="Script" uid="uid://b5ra1pmoqake3" path="res://scripts/collectibles/coin.gd" id="1_qygne"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ivv4e"]
-top_radius = 0.4
-bottom_radius = 0.4
-height = 0.1
+[ext_resource type="PackedScene" uid="uid://dye0yj12agjrj" path="res://assets/models/medieval_ancient_coin.glb" id="2_ais5i"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qygne"]
+radius = 0.35301754
 
 [node name="Coin" type="Area3D" unique_id=583202747]
 script = ExtResource("1_qygne")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1645768976]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, 0)
-mesh = SubResource("CylinderMesh_ivv4e")
+[node name="Sketchfab_Scene" parent="." unique_id=1297076511 instance=ExtResource("2_ais5i")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.9867586, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1914380304]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, 0.002270501)

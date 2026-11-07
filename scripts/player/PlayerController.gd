@@ -23,9 +23,13 @@ var slide_time:float=0.0
 @onready var magnet_attractor:Area3D=$MagnetAttractor
 @onready var power_up_timer:Timer=$PowerUpTimer
 
-@onready var animation_player:AnimationPlayer=$ModelVisuals/AuxScene/AnimationPlayer
-@onready var animation_tree:AnimationTree=$ModelVisuals/AuxScene/AnimationPlayer/AnimationTree
+@onready var animation_player:AnimationPlayer=$ModelVisuals/Character/AnimationPlayer
+@onready var animation_tree:AnimationTree=$ModelVisuals/Character/AnimationPlayer/AnimationTree
 @onready var anim_state=animation_tree.get("parameters/playback")
+
+var has_shield:bool=false
+@onready var shield_bubble:MeshInstance3D=$ModelVisuals/ShieldBubble
+
 func _ready():
 	target_x=0.0
 	position.x=0.0
@@ -105,3 +109,12 @@ func activate_magnet(duration:float):
 	magnet_attractor.monitoring=true
 	power_up_timer.start(duration)
 	print("Magnet Activated!")
+func activate_shield():
+	if not has_shield:
+		has_shield=true
+		shield_bubble.visible=true
+		
+func break_shield():
+	has_shield=false
+	shield_bubble.visible=false
+	

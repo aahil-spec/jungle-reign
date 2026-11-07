@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dpifqqcl7opmc"]
 
 [ext_resource type="PackedScene" uid="uid://lr2p3m3jj2t7" path="res://assets/models/end_of_the_path.glb" id="1_jf1dr"]
-[ext_resource type="PackedScene" uid="uid://cvu5mhvi4ea83" path="res://scenes/player/player.tscn" id="2_cjnwd"]
 [ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/models/ruin_wall.glb" id="3_h13bf"]
 [ext_resource type="PackedScene" uid="uid://bqjiytavt00xa" path="res://assets/models/tree_broken_mossy_branch_pbr_photogrammetry_free.glb" id="4_gab7y"]
 [ext_resource type="PackedScene" uid="uid://dxmoatag65jf8" path="res://assets/models/old_tree.glb" id="5_gab7y"]
@@ -16,9 +15,6 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=757939107]
 transform = Transform3D(1.0643804, 0, 0, 0, 1, 0, 0, 0, 1, 0.62835693, 0.4140625, -38.2397)
 size = Vector3(17, 0.172, 89.241)
-
-[node name="Player" parent="." unique_id=1100361978 instance=ExtResource("2_cjnwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.742486, 2.5824223, 0)
 
 [node name="Models" type="Node3D" parent="." unique_id=787152024]
 

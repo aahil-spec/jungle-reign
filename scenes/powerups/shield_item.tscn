@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ccjprb3xc5uba"]
+
+[ext_resource type="Script" uid="uid://dvcciggo0x8f8" path="res://scripts/powerups/shield_item.gd" id="1_47bic"]
+[ext_resource type="PackedScene" uid="uid://bp7k3aoykf2ut" path="res://assets/models/tower-shield.glb" id="1_g34q5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g34q5"]
+size = Vector3(1.055662, 2, 0.51990956)
+
+[node name="ShieldItem" type="Area3D" unique_id=600589626]
+script = ExtResource("1_47bic")
+
+[node name="Model" parent="." unique_id=380864784 instance=ExtResource("1_g34q5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1438377530]
+transform = Transform3D(1, 0, 0, 0, 1, -4.3711392e-08, 0, 4.3711392e-08, 1, 0, 1, 0.026556343)
+shape = SubResource("BoxShape3D_g34q5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Model"]
