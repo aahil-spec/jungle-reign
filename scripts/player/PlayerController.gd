@@ -20,11 +20,17 @@ var slide_time:float=0.0
 @onready var sliding_collision:CollisionShape3D=$SlidingCollision
 @onready var visuals:Node3D=$ModelVisuals
 
+@onready var magnet_attractor:Area3D=$MagnetAttractor
+@onready var power_up_timer:Timer=$PowerUpTimer
+
+@onready var animation_player:AnimationPlayer=$ModelVisuals/AuxScene/AnimationPlayer
+@onready var animation_tree:AnimationTree=$ModelVisuals/AuxScene/AnimationPlayer/AnimationTree
+@onready var anim_state=animation_tree.get("parameters/playback")
 func _ready():
 	target_x=0.0
 	position.x=0.0
 	GameManager.change_state(GameManager.GameState.RUNNING)
-	
+	anim_state.travel("Running")
 func _physics_process(delta: float):
 	if GameManager.current_state!=GameManager.GameState.RUNNING:
 		return
@@ -35,8 +41,10 @@ func _physics_process(delta: float):
 	var current_speed=forward_speed*GameManager.current_speed_multiplier
 	velocity.z=-current_speed
 	GameManager.distance_travelled+=current_speed*delta
+	var was_in_air=not is_on_floor()
 	move_and_slide()
-	
+	if was_in_air and is_on_floor() and not is_sliding:
+		anim_state.travel("Running")
 func _input(event:InputEvent):
 	if GameManager.current_state!=GameManager.GameState.RUNNING:
 		return
@@ -48,6 +56,8 @@ func _input(event:InputEvent):
 		_update_target_x()
 	if event.is_action_pressed("jump") and is_on_floor() and not is_sliding:
 		velocity.y=jump_force
+		anim_state.travel("Jump")
+		
 	if event.is_action_pressed("slide") and is_on_floor() and not is_sliding:
 		_start_slide()
 		
@@ -69,8 +79,8 @@ func _start_slide():
 	slide_time=slide_duration
 	standing_collision.disabled=true
 	sliding_collision.disabled=false
-	visuals.scale.y=0.5
-	
+	anim_state.travel("RunningSlide")
+	visuals.position.y=-0.5
 func _handle_sliding(delta:float):
 	if is_sliding:
 		slide_time-=delta
@@ -81,4 +91,17 @@ func _end_slide():
 	is_sliding=false
 	standing_collision.disabled=false
 	sliding_collision.disabled=true
-	visuals.scale.y=1.0
+	if is_on_floor():
+		anim_state.travel("Running")
+	visuals.position.y=0.0
+func _on_magnet_attractor_area_entered(area: Area3D) -> void:
+	if area is CollectibleCoin:
+		area.attract_to(self)
+func _on_power_up_timer_timeout():
+	magnet_attractor.monitoring=false
+	print("Magnet Deactivated.")
+	
+func activate_magnet(duration:float):
+	magnet_attractor.monitoring=true
+	power_up_timer.start(duration)
+	print("Magnet Activated!")

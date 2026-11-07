@@ -7,12 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cwbousaamtt6k" path="res://scenes/collectibles/coin.tscn" id="3_5imb7"]
 [ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/models/ruin_wall.glb" id="3_w0sup"]
 [ext_resource type="PackedScene" uid="uid://drs6i5nhulpc6" path="res://assets/models/tree_branch.glb" id="4_s8mxv"]
+[ext_resource type="PackedScene" uid="uid://dgnkvhsanso8s" path="res://scenes/powerups/magnet_item.tscn" id="4_w0sup"]
 [ext_resource type="PackedScene" uid="uid://bm3fdp6a0564o" path="res://assets/models/wooden_spear.glb" id="5_jn50n"]
 
 [node name="StraightSegment" type="Node3D" unique_id=395727918]
 script = ExtResource("1_3vvgm")
 obstacle_scenes = Array[PackedScene]([ExtResource("2_k5nas")])
 coin_scene = ExtResource("3_5imb7")
+powerup_scene = ExtResource("4_w0sup")
 
 [node name="ExitPoint" type="Marker3D" parent="." unique_id=1897036118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50.945045)
@@ -115,3 +117,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="Coin3" type="Marker3D" parent="CoinSpawns" unique_id=791682130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+
+[node name="PowerUpSpawn" type="Marker3D" parent="." unique_id=737990327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6251657, -15)

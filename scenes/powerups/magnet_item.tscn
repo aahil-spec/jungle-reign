@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dgnkvhsanso8s"]
+
+[ext_resource type="Script" uid="uid://d2qfq547aih3w" path="res://scripts/powerups/magnet_item.gd" id="1_xypkt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kkluh"]
+size = Vector3(0.8, 0.8, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kkluh"]
+
+[node name="MagnetItem" type="Area3D" unique_id=310103815]
+script = ExtResource("1_xypkt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1966715004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_kkluh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1772097143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_kkluh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

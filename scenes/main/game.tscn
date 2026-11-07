@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bkjhey06v6r7v"]
 
-[ext_resource type="PackedScene" uid="uid://cvu5mhvi4ea83" path="res://scenes/player/player.tscn" id="1_e64el"]
 [ext_resource type="Script" uid="uid://c0wr62qcc3xo4" path="res://scripts/systems/track_manager.gd" id="2_ma5rq"]
 [ext_resource type="PackedScene" uid="uid://dj6nf11ka2our" path="res://scenes/track/straight_segment.tscn" id="3_e3dby"]
+[ext_resource type="PackedScene" uid="uid://br5fq1jec68ib" path="res://scenes/player/player.scn" id="4_gf1f2"]
 [ext_resource type="PackedScene" uid="uid://blndh6tmhxax" path="res://scenes/ui/hud.tscn" id="4_gsayk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7aoy"]
@@ -27,12 +27,12 @@ environment = SubResource("Environment_ma5rq")
 transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." unique_id=1100361978 instance=ExtResource("1_e64el")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6919532, 0)
-
 [node name="TrackManager" type="Node3D" parent="." unique_id=1993311355 node_paths=PackedStringArray("player")]
 script = ExtResource("2_ma5rq")
 segment_scenes = Array[PackedScene]([ExtResource("3_e3dby")])
 player = NodePath("../Player")
 
 [node name="HUD" parent="." unique_id=806773985 instance=ExtResource("4_gsayk")]
+
+[node name="Player" parent="." unique_id=1100361978 instance=ExtResource("4_gf1f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9311852, 0)
