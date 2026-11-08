@@ -37,10 +37,12 @@ var is_boosting:bool=false
 @onready var shield_timer:Timer=$ShieldTimer
 
 var is_ziplining:bool=false
+var is_grinding:bool=false
+var grind_height:float=0.0
+
 func _ready():
 	target_x=0.0
 	position.x=0.0
-	GameManager.change_state(GameManager.GameState.RUNNING)
 	anim_state.travel("Running")
 		
 func _physics_process(delta: float):
@@ -63,6 +65,8 @@ func _physics_process(delta: float):
 func _input(event:InputEvent):
 	if GameManager.current_state!=GameManager.GameState.RUNNING:
 		return
+	if is_ziplining:
+		return
 	if event.is_action_pressed("move_left") and current_lame>0:
 		current_lame-=1
 		_update_target_x()
@@ -72,6 +76,7 @@ func _input(event:InputEvent):
 	if event.is_action_pressed("jump") and is_on_floor() and not is_sliding and not is_ziplining:
 		velocity.y=jump_force
 		anim_state.travel("Jump")
+		is_grinding=false
 		
 	if event.is_action_pressed("slide") and is_on_floor() and not is_sliding and not is_ziplining:
 		_start_slide()
@@ -86,7 +91,6 @@ func _handle_lane_switching(delta:float):
 func _handle_vertical_movement(delta:float):
 	if is_ziplining:
 		velocity.y=-1.5
-		
 	elif not is_on_floor():
 		velocity.y-=gravity*delta
 	elif velocity.y<0:
@@ -155,7 +159,22 @@ func start_zipline():
 	anim_state.travel("HangingIdle")
 	current_lame=1
 	_update_target_x()
-	
+	velocity.y=0.0
+	global_position.y=1.2
 func end_zipline():
 	is_ziplining=false
 	anim_state.travel("Jump")
+func start_grind(rail_y:float):
+	if is_ziplining:return
+	is_grinding=true
+	grind_height=rail_y
+	velocity.y=0.0
+	anim_state.travel("RunningSlide")
+	
+func end_grind():
+	if not is_grinding:return
+	is_grinding=false
+	if not is_on_floor():
+		anim_state.travel("Jump")
+	else:
+		anim_state.travel("Running")

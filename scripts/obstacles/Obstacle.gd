@@ -11,3 +11,7 @@ func _on_body_entered(body:Node3D):
 			queue_free()
 		else:
 			GameManager.change_state(GameManager.GameState.GAME_OVER)
+			var ui=get_tree().root.get_node("Game/UIManager")
+			if ui:
+				ui.show_game_over(GameManager.current_score)
+			get_tree().paused=true

@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c0wr62qcc3xo4" path="res://scripts/systems/track_manager.gd" id="2_ma5rq"]
 [ext_resource type="PackedScene" uid="uid://dj6nf11ka2our" path="res://scenes/track/straight_segment.tscn" id="3_e3dby"]
+[ext_resource type="PackedScene" uid="uid://dsg1q0sayxhld" path="res://scenes/main/zipline_segment.tscn" id="3_gf1f2"]
 [ext_resource type="PackedScene" uid="uid://br5fq1jec68ib" path="res://scenes/player/player.scn" id="4_gf1f2"]
 [ext_resource type="PackedScene" uid="uid://blndh6tmhxax" path="res://scenes/ui/hud.tscn" id="4_gsayk"]
+[ext_resource type="Script" uid="uid://bqsls7hmer6a3" path="res://scripts/Ui/ui_manager.gd" id="6_em1bs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c7aoy"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +19,8 @@ background_mode = 2
 sky = SubResource("Sky_e64el")
 tonemap_mode = 2
 glow_enabled = true
+fog_enabled = true
+fog_density = 0.02
 
 [node name="Game" type="Node3D" unique_id=1621726090]
 
@@ -31,6 +35,8 @@ shadow_enabled = true
 script = ExtResource("2_ma5rq")
 segment_scenes = Array[PackedScene]([ExtResource("3_e3dby")])
 player = NodePath("../Player")
+zipline_scene = ExtResource("3_gf1f2")
+zipline_spawn_count = 1
 
 [node name="HUD" parent="." unique_id=806773985 instance=ExtResource("4_gsayk")]
 
@@ -38,58 +44,216 @@ player = NodePath("../Player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9311852, 0)
 
 [node name="Skeleton3D" parent="Player/ModelVisuals/Character/Node" parent_id_path=PackedInt32Array(1100361978, 1983471326) index="0" unique_id=1667725928]
-bones/0/position = Vector3(-0.671229, 99.222336, 3.7424507)
-bones/0/rotation = Quaternion(0.088846415, -0.031558838, -0.0060824645, 0.9955267)
-bones/1/rotation = Quaternion(-0.0032593368, 0.1484768, 0.0010829662, 0.98891)
-bones/2/rotation = Quaternion(-0.03601673, 0.019067217, 0.001693723, 0.9991679)
-bones/3/rotation = Quaternion(0.06628774, 0.019067548, 0.0010043967, 0.99761784)
-bones/4/rotation = Quaternion(0.034866314, -0.0308723, -0.025158184, 0.99859816)
-bones/5/rotation = Quaternion(-0.13959128, -0.11035235, 0.012824811, 0.98395747)
-bones/7/rotation = Quaternion(0.607214, 0.41402626, -0.5071375, 0.45020565)
-bones/8/rotation = Quaternion(0.3559751, 0.34762454, -0.38857904, 0.77552897)
-bones/9/rotation = Quaternion(-4.161815e-07, 2.4393728e-07, 0.6339562, 0.77336895)
-bones/10/rotation = Quaternion(-0.023288928, -0.15522519, -0.036895424, 0.9869152)
-bones/11/rotation = Quaternion(0.16857265, 0.069584414, 0.2404925, 0.95336497)
-bones/12/rotation = Quaternion(0.012512251, 0.008642322, -0.050896216, 0.9985882)
-bones/13/rotation = Quaternion(-0.021086186, 0.004218248, -0.0029667616, 0.99976444)
-bones/15/rotation = Quaternion(0.048292615, 9.421639e-08, -0.0058280933, 0.9988163)
-bones/16/rotation = Quaternion(0.10298188, 1.5849947e-07, -0.012427294, 0.99460566)
-bones/17/rotation = Quaternion(0.024183, 1.8283029e-07, -0.0029178613, 0.9997034)
-bones/19/rotation = Quaternion(0.048153333, -1.4697434e-08, -0.0058115423, 0.9988231)
-bones/20/rotation = Quaternion(0.10312003, 1.7695129e-08, -0.0124434745, 0.9945911)
-bones/21/rotation = Quaternion(0.02418277, -3.7684007e-08, -0.0029185968, 0.9997034)
-bones/23/rotation = Quaternion(0.048292607, -8.5412466e-08, -0.0058285063, 0.99881625)
-bones/24/rotation = Quaternion(0.10298153, 7.7532604e-08, -0.012427335, 0.99460566)
-bones/25/rotation = Quaternion(0.078898616, -1.05254e-07, -0.009521025, 0.9968372)
-bones/27/rotation = Quaternion(0.043816067, 0.0017341559, -0.04115548, 0.99819005)
-bones/28/rotation = Quaternion(0.107342966, 0.0036981467, 0.022763422, 0.9939546)
-bones/29/rotation = Quaternion(0.07889808, -6.9048845e-08, -0.009520513, 0.9968373)
-bones/31/rotation = Quaternion(0.5801867, -0.42731854, 0.53218186, 0.44448248)
-bones/32/rotation = Quaternion(0.36501986, -0.030509293, -0.08621975, 0.9264966)
-bones/33/rotation = Quaternion(-1.1296238e-07, -1.5216933e-07, -0.8665349, 0.4991165)
-bones/34/rotation = Quaternion(-0.14563052, -0.085489854, 0.18117668, 0.96884376)
-bones/35/rotation = Quaternion(0.11245161, -0.09359304, -0.13136421, 0.98047876)
-bones/36/rotation = Quaternion(-0.020484494, -0.017850084, 0.07276856, 0.9969787)
-bones/37/rotation = Quaternion(-0.04114864, -0.0071464176, -0.006169964, 0.99910843)
-bones/39/rotation = Quaternion(0.027669227, 2.4421945e-07, 0.0033808348, 0.99961144)
-bones/40/rotation = Quaternion(0.14395106, 1.4780048e-07, 0.017548753, 0.98942924)
-bones/41/rotation = Quaternion(0.013868835, -2.0402085e-07, 0.0016903417, 0.9999025)
-bones/43/rotation = Quaternion(0.027669238, 1.5570546e-07, 0.0033813426, 0.99961144)
-bones/44/rotation = Quaternion(0.14395104, 1.1167411e-07, 0.017548557, 0.98942924)
-bones/45/rotation = Quaternion(0.01386856, -1.0182313e-07, 0.0016902201, 0.9999024)
-bones/47/rotation = Quaternion(0.027669204, 1.9869768e-07, 0.0033814234, 0.99961144)
-bones/48/rotation = Quaternion(0.14395103, 7.8034184e-08, 0.017548632, 0.98942924)
-bones/49/rotation = Quaternion(0.013868617, -4.0768466e-08, 0.0016909273, 0.9999025)
-bones/51/rotation = Quaternion(0.027669204, 1.8865856e-07, 0.0033810586, 0.99961144)
-bones/52/rotation = Quaternion(0.14395103, 5.747654e-08, 0.017548488, 0.98942924)
-bones/53/rotation = Quaternion(0.013054734, 3.6431068e-08, 0.0015914657, 0.9999135)
-bones/55/rotation = Quaternion(-0.051728755, 0.47595713, 0.87592995, -0.059461802)
-bones/56/rotation = Quaternion(-0.50824183, -0.105677724, -0.029886073, 0.8541835)
-bones/57/rotation = Quaternion(0.32814348, -0.018118922, 0.045664337, 0.94334954)
-bones/58/rotation = Quaternion(0.5132492, -0.010187698, -0.012850326, 0.85808295)
-bones/60/rotation = Quaternion(-0.050739124, -0.110944964, 0.992385, -0.016991518)
-bones/61/rotation = Quaternion(-0.37654275, -0.09267478, -0.04483885, 0.92066085)
-bones/62/rotation = Quaternion(0.0012123695, 0.037513435, 0.09300728, 0.99495775)
-bones/63/rotation = Quaternion(0.51051307, 0.010037661, 0.012810028, 0.859716)
+bones/0/position = Vector3(0.565306, 92.77969, 1.1759746)
+bones/0/rotation = Quaternion(0.07358299, -0.046849594, -0.05464475, 0.9946882)
+bones/1/rotation = Quaternion(0.09649278, 0.10047652, 0.055836156, 0.9886739)
+bones/2/rotation = Quaternion(-0.06671724, 0.012128915, 0.011410457, 0.99763304)
+bones/3/rotation = Quaternion(0.03588647, 0.012632359, 0.0105835665, 0.99922)
+bones/4/rotation = Quaternion(0.021388782, -0.015775533, -0.027588097, 0.9992661)
+bones/5/rotation = Quaternion(-0.17617805, -0.03464836, 0.0013632929, 0.9837475)
+bones/7/rotation = Quaternion(0.61460435, 0.40695253, -0.5106045, 0.44264457)
+bones/8/rotation = Quaternion(0.41315112, 0.34343678, -0.28108773, 0.7952025)
+bones/9/rotation = Quaternion(-3.6235977e-07, 2.9877177e-07, 0.54219866, 0.8402504)
+bones/10/rotation = Quaternion(-0.000350878, -0.06159084, 0.0011554025, 0.99810076)
+bones/11/rotation = Quaternion(0.16766572, 0.0668846, 0.22193193, 0.9582072)
+bones/12/rotation = Quaternion(0.0116720125, -0.00012305469, -0.07728575, 0.9969407)
+bones/13/rotation = Quaternion(-0.021087183, -6.0013e-05, -0.016227875, 0.99964595)
+bones/15/rotation = Quaternion(0.03621289, 1.5628759e-08, -0.004370473, 0.99933463)
+bones/16/rotation = Quaternion(0.090894364, 1.2920646e-07, -0.010968637, 0.9958002)
+bones/17/rotation = Quaternion(0.018111687, 2.2806216e-07, -0.0021852574, 0.9998336)
+bones/19/rotation = Quaternion(0.036073532, -4.8912618e-08, -0.004353872, 0.99933964)
+bones/20/rotation = Quaternion(0.091032445, 1.1117662e-08, -0.010984938, 0.9957873)
+bones/21/rotation = Quaternion(0.018111497, -3.3110155e-08, -0.002185946, 0.99983364)
+bones/23/rotation = Quaternion(0.036212888, -6.247138e-08, -0.0043708202, 0.99933463)
+bones/24/rotation = Quaternion(0.09089402, -5.1819363e-08, -0.010968737, 0.99580014)
+bones/25/rotation = Quaternion(0.07284363, 1.4377294e-08, -0.008790385, 0.9973046)
+bones/27/rotation = Quaternion(0.03174161, 0.0013003226, -0.039717104, 0.9987058)
+bones/28/rotation = Quaternion(0.095268264, 0.0032640703, 0.02426338, 0.99515057)
+bones/29/rotation = Quaternion(0.07284313, 3.533933e-08, -0.008789829, 0.99730474)
+bones/31/rotation = Quaternion(0.59225845, -0.41590047, 0.5343564, 0.43671507)
+bones/32/rotation = Quaternion(0.37216604, 0.04268639, -0.105246186, 0.92119145)
+bones/33/rotation = Quaternion(-2.6517193e-07, -8.0949505e-08, -0.6479455, 0.76168674)
+bones/34/rotation = Quaternion(-0.16665044, 0.16076374, -0.17016792, 0.9578234)
+bones/35/rotation = Quaternion(0.110054925, -0.085485145, -0.1740259, 0.97483087)
+bones/36/rotation = Quaternion(-0.020854171, -0.015056601, 0.08758462, 0.99582505)
+bones/37/rotation = Quaternion(-0.04118846, -0.005921288, 0.0012943209, 0.99913305)
+bones/39/rotation = Quaternion(0.02766918, 3.9238816e-07, 0.0033808344, 0.99961144)
+bones/40/rotation = Quaternion(0.1439511, 7.3343955e-08, 0.01754876, 0.98942924)
+bones/41/rotation = Quaternion(0.013868842, -2.27947e-07, 0.0016903675, 0.9999025)
+bones/43/rotation = Quaternion(0.027669169, 2.3141483e-07, 0.003381282, 0.99961144)
+bones/44/rotation = Quaternion(0.14395116, 3.9727766e-08, 0.017548567, 0.98942924)
+bones/45/rotation = Quaternion(0.013868543, -1.491346e-08, 0.001690219, 0.9999025)
+bones/47/rotation = Quaternion(0.027669122, 2.7837518e-07, 0.0033813473, 0.99961144)
+bones/48/rotation = Quaternion(0.14395115, 8.620595e-08, 0.017548624, 0.9894292)
+bones/49/rotation = Quaternion(0.013868551, -1.10538494e-07, 0.0016909239, 0.9999025)
+bones/51/rotation = Quaternion(0.027669122, 2.683224e-07, 0.0033809827, 0.99961144)
+bones/52/rotation = Quaternion(0.1439512, -1.3312841e-08, 0.017548516, 0.9894292)
+bones/53/rotation = Quaternion(0.013868531, -5.0437045e-08, 0.0016906046, 0.9999024)
+bones/55/rotation = Quaternion(0.055946466, 0.3879683, 0.9144677, -0.100496545)
+bones/56/rotation = Quaternion(-0.9462422, -0.025177833, 0.07229913, 0.31426862)
+bones/57/rotation = Quaternion(0.25364974, -0.040993523, 0.04704552, 0.9652813)
+bones/58/rotation = Quaternion(0.5118098, -0.0101070935, -0.012831962, 0.85894346)
+bones/60/rotation = Quaternion(-0.045369882, 0.18574817, 0.9775789, -0.08819743)
+bones/61/rotation = Quaternion(-0.4826561, -0.06875, -0.0024021056, 0.8731042)
+bones/62/rotation = Quaternion(0.43979937, -0.039245985, -0.06685856, 0.8947437)
+bones/63/rotation = Quaternion(0.65389895, 0.01835673, 0.014542312, 0.7562195)
+
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=1329363290]
+process_mode = 3
+script = ExtResource("6_em1bs")
+
+[node name="MainMenu" type="Control" parent="UIManager" unique_id=1338924634]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UIManager/MainMenu" unique_id=732303773]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -134.0
+offset_top = 174.0
+offset_right = 143.0
+offset_bottom = 229.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8516488, 0.7158009, 0.024956757, 1)
+theme_override_font_sizes/font_size = 40
+text = "JUNGLE REIGN"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/MainMenu" unique_id=1474956589]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="UIManager/MainMenu/VBoxContainer" unique_id=148672005]
+layout_mode = 2
+text = "TAP TO RUN"
+
+[node name="PauseMenu" type="Control" parent="UIManager" unique_id=1558943870]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UIManager/PauseMenu" unique_id=487600499]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5058824)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/PauseMenu" unique_id=1990357026]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="UIManager/PauseMenu/VBoxContainer" unique_id=26980935]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="UIManager/PauseMenu/VBoxContainer" unique_id=1243217770]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="GameOverMenu" type="Control" parent="UIManager" unique_id=1127441632]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UIManager/GameOverMenu" unique_id=148876385]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22745098, 0, 0, 0.49019608)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UIManager/GameOverMenu" unique_id=949853309]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50564235
+anchor_top = 0.22916667
+anchor_right = 0.66536456
+anchor_bottom = 0.30015436
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Game Over"
+metadata/_edit_use_anchors_ = true
+
+[node name="FinalScoreLabel" type="Label" parent="UIManager/GameOverMenu" unique_id=1321724543]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 64.0
+offset_right = 726.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 30
+text = "Score: 0"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/GameOverMenu" unique_id=683223004]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -15.5
+offset_right = 40.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TryAgainButton" type="Button" parent="UIManager/GameOverMenu/VBoxContainer" unique_id=1812234219]
+layout_mode = 2
+text = "Try Again"
+
+[connection signal="pressed" from="UIManager/MainMenu/VBoxContainer/PlayButton" to="UIManager" method="_on_play_button_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/ResumeButton" to="UIManager" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UIManager/PauseMenu/VBoxContainer/QuitButton" to="UIManager" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UIManager/GameOverMenu/VBoxContainer/TryAgainButton" to="UIManager" method="_on_try_again_button_pressed"]
 
 [editable path="Player"]
