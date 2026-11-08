@@ -11,16 +11,23 @@ var max_speed_multiplier:float=2.5
 var speed_increase_rate:float=0.01
 var coin_multiplier:int=1
 var multiplier_timer:float=0.0
+var current_score:int=0
 
 @warning_ignore("unused_signal")
 signal state_changed(new_state:GameState)
 
+
 func change_state(new_state:GameState):
 	current_state=new_state
+	if current_state==GameState.RUNNING:
+		get_tree().paused=false
 	emit_signal("state_changed",current_state)
 	
 func _process(delta: float):
 	if current_state==GameState.RUNNING:
+		distance_travelled+=delta*15.0
+		current_score=int(distance_travelled)
+		
 		_handle_difficulty_scaling(delta)
 		_calculate_score()
 		if multiplier_timer>0.0:
@@ -45,10 +52,11 @@ func _calculate_score():
 	score=int(distance_travelled*10) +(current_run_coins*50)
 	
 func reset_run():
-	current_run_coins=0
+	current_score=0
 	distance_travelled=0.0
-	score=0
-	current_speed_multiplier=1.0
+	current_run_coins=0
+	coin_multiplier=1
+	current_state=GameState.MAIN_MENU
 func activate_multiplier(duration:float,amount:int=2):
 	coin_multiplier=amount
 	multiplier_timer=duration

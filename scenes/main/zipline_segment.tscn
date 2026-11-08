@@ -162,5 +162,8 @@ script = ExtResource("6_v8p0n")
 transform = Transform3D(1, 0, 0, 0, 0.98480785, 0.1736482, 0, -0.1736482, 0.98480785, 0, -1.6537734, -24.325577)
 shape = SubResource("BoxShape3D_isajq")
 
+[node name="ExitPoint" type="Marker3D" parent="." unique_id=1233058240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.912974, -98.727356)
+
 [connection signal="body_entered" from="ZiplineTrigger" to="ZiplineTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="ZiplineTrigger" to="ZiplineTrigger" method="_on_body_exited"]
