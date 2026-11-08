@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://wt3fbdmlfsxv"]
+
+[ext_resource type="Script" uid="uid://bdtd432pggikf" path="res://scripts/obstacles/Obstacle.gd" id="1_xew6k"]
+[ext_resource type="PackedScene" uid="uid://drs6i5nhulpc6" path="res://assets/models/tree_branch.glb" id="2_vlc08"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xew6k"]
+radius = 0.5214844
+height = 5.6470947
+
+[node name="JumpLog" type="Area3D" unique_id=96481920]
+script = ExtResource("1_xew6k")
+
+[node name="Sketchfab_Scene9" parent="." unique_id=381848228 instance=ExtResource("2_vlc08")]
+transform = Transform3D(0.4, 0, 0, 0, 0.224, 0, 0, 0, 0.224, 0, -0.3253641, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1166348107]
+transform = Transform3D(-4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0, 1, 0.1276441, 0.76895237, 0.5613867)
+shape = SubResource("CapsuleShape3D_xew6k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Sketchfab_Scene9"]

@@ -21,16 +21,26 @@ var slide_time:float=0.0
 @onready var visuals:Node3D=$ModelVisuals
 
 @onready var magnet_attractor:Area3D=$MagnetAttractor
-@onready var power_up_timer:Timer=$PowerUpTimer
+@onready var power_up_timer:Timer=$MagnetTimer
 
-@onready var animation_player:AnimationPlayer=$ModelVisuals/AuxScene/AnimationPlayer
-@onready var animation_tree:AnimationTree=$ModelVisuals/AuxScene/AnimationPlayer/AnimationTree
+@onready var animation_player:AnimationPlayer=$ModelVisuals/Character/AnimationPlayer
+@onready var animation_tree:AnimationTree=$ModelVisuals/Character/AnimationPlayer/AnimationTree
 @onready var anim_state=animation_tree.get("parameters/playback")
+
+var has_shield:bool=false
+@onready var shield_bubble:MeshInstance3D=$ModelVisuals/ShieldBubble
+
+var is_boosting:bool=false
+@onready var boost_timer:Timer=$BoostTimer
+@onready var camera:Camera3D=$CameraPivot/Camera3D
+
+@onready var shield_timer:Timer=$ShieldTimer
 func _ready():
 	target_x=0.0
 	position.x=0.0
 	GameManager.change_state(GameManager.GameState.RUNNING)
 	anim_state.travel("Running")
+		
 func _physics_process(delta: float):
 	if GameManager.current_state!=GameManager.GameState.RUNNING:
 		return
@@ -39,12 +49,15 @@ func _physics_process(delta: float):
 	_handle_sliding(delta)
 	
 	var current_speed=forward_speed*GameManager.current_speed_multiplier
+	if is_boosting:
+		current_speed*=2.0
 	velocity.z=-current_speed
 	GameManager.distance_travelled+=current_speed*delta
 	var was_in_air=not is_on_floor()
 	move_and_slide()
 	if was_in_air and is_on_floor() and not is_sliding:
 		anim_state.travel("Running")
+	
 func _input(event:InputEvent):
 	if GameManager.current_state!=GameManager.GameState.RUNNING:
 		return
@@ -105,3 +118,30 @@ func activate_magnet(duration:float):
 	magnet_attractor.monitoring=true
 	power_up_timer.start(duration)
 	print("Magnet Activated!")
+func activate_shield(duration:float=15.0):
+	if not has_shield:
+		has_shield=true
+		shield_bubble.visible=true
+	shield_timer.start(duration)
+	
+func break_shield():
+	has_shield=false
+	shield_bubble.visible=false
+	shield_timer.stop()
+	
+func _on_boost_timer_timeout():
+	is_boosting=false
+	var tween=create_tween()
+	tween.tween_property(camera,"fov",75.0,0.5)
+	
+func activate_boost(duration:float=8.0):
+	if not is_boosting:
+		is_boosting=true
+		var tween=create_tween()
+		tween.tween_property(camera,"fov",95.0,0.5)
+	boost_timer.start(duration)
+
+func _on_shield_timer_timeout():
+	if has_shield:
+		break_shield()
+		

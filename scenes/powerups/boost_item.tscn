@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dy104rh5rrles"]
+
+[ext_resource type="Script" uid="uid://d30kqobl50js5" path="res://scripts/powerups/boost_item.gd" id="1_w2ib3"]
+[ext_resource type="PackedScene" uid="uid://djcoatu2fbfwy" path="res://assets/models/powerup_or_booster__for_games_and_more.glb" id="2_40ehq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0a5md"]
+points = PackedVector3Array(-1.5007297, -0.52292275, 0.24584901, -1.5007297, -0.52292275, 1.0051367, -1.4921577, -0.44427776, 0.24584901, -0.21696806, 4.213794, 0.24076116, -1.0721288, -4.039824, 0.24076116, -1.4921577, -0.44427776, 1.0050619, -1.0721288, -4.039824, 0.9999741, -1.4827693, -0.59337544, 1.0050619, 1.6011161, 0.12098265, 0.9999741, 2.6693525, 4.0909114, 0.9999741, 2.6685362, 4.1826634, 0.9999741, 2.6273088, 4.2547545, 0.9999741, 2.5493445, 4.3014503, 0.9999741, -0.21696806, 4.213794, 0.9999741, -0.18553734, 4.271958, 0.24076116, 1.6011161, 0.12425947, 0.24076116, 2.44199, 4.3178344, 0.9999741, -0.06634545, 4.3293033, 0.9999741, -0.13002336, 4.3137383, 0.9999741, -0.18553734, 4.271958, 0.9999741, -1.4399092, -0.6499014, 1.0049123, 2.6693525, 4.0909114, 0.24076116, 2.6685362, 4.1826634, 0.24076116, 2.6273088, 4.2547545, 0.24076116, 2.5493445, 4.3014503, 0.24076116, -0.13002336, 4.3137383, 0.24076116, 2.44199, 4.3178344, 0.24076116, -0.06634545, 4.3293033, 0.24076116)
+
+[node name="BoostItem" type="Area3D" unique_id=872521547]
+script = ExtResource("1_w2ib3")
+
+[node name="Model" parent="." unique_id=429374911 instance=ExtResource("2_40ehq")]
+transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.10000001, 0, 0.10000001, -4.371139e-09, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1814991749]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 1.1920929e-08, 0, -1.1920929e-08, 0.1, 0, 1, 0)
+shape = SubResource("ConvexPolygonShape3D_0a5md")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

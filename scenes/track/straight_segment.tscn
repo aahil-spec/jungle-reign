@@ -5,16 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://lr2p3m3jj2t7" path="res://assets/models/end_of_the_path.glb" id="2_5imb7"]
 [ext_resource type="PackedScene" uid="uid://dpnx3psjm5j88" path="res://scenes/obstacles/rock_obstacle.tscn" id="2_k5nas"]
 [ext_resource type="PackedScene" uid="uid://cwbousaamtt6k" path="res://scenes/collectibles/coin.tscn" id="3_5imb7"]
+[ext_resource type="PackedScene" uid="uid://brvmuwov4af8h" path="res://scenes/obstacles/slide_log.tscn" id="3_jn50n"]
 [ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/models/ruin_wall.glb" id="3_w0sup"]
-[ext_resource type="PackedScene" uid="uid://drs6i5nhulpc6" path="res://assets/models/tree_branch.glb" id="4_s8mxv"]
+[ext_resource type="PackedScene" uid="uid://wt3fbdmlfsxv" path="res://scenes/obstacles/jump_log.tscn" id="4_4i3lr"]
 [ext_resource type="PackedScene" uid="uid://dgnkvhsanso8s" path="res://scenes/powerups/magnet_item.tscn" id="4_w0sup"]
-[ext_resource type="PackedScene" uid="uid://bm3fdp6a0564o" path="res://assets/models/wooden_spear.glb" id="5_jn50n"]
+[ext_resource type="PackedScene" uid="uid://ccjprb3xc5uba" path="res://scenes/powerups/shield_item.tscn" id="6_s8mxv"]
+[ext_resource type="PackedScene" uid="uid://cb22o5gruopge" path="res://scenes/powerups/multiplier_item.tscn" id="8_jn50n"]
+[ext_resource type="PackedScene" uid="uid://dy104rh5rrles" path="res://scenes/powerups/boost_item.tscn" id="9_4i3lr"]
 
 [node name="StraightSegment" type="Node3D" unique_id=395727918]
 script = ExtResource("1_3vvgm")
-obstacle_scenes = Array[PackedScene]([ExtResource("2_k5nas")])
+obstacle_scenes = Array[PackedScene]([ExtResource("2_k5nas"), ExtResource("3_jn50n"), ExtResource("4_4i3lr")])
 coin_scene = ExtResource("3_5imb7")
-powerup_scene = ExtResource("4_w0sup")
+powerup_scenes = Array[PackedScene]([ExtResource("6_s8mxv"), ExtResource("4_w0sup"), ExtResource("8_jn50n"), ExtResource("9_4i3lr")])
 
 [node name="ExitPoint" type="Marker3D" parent="." unique_id=1897036118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50.945045)
@@ -70,31 +73,22 @@ transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.82
 transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.821348, 7.483141, -24.069407)
 
 [node name="Sketchfab_Scene" parent="Models" unique_id=922855634 instance=ExtResource("2_5imb7")]
-transform = Transform3D(-6.4660373, 0, -0.050988924, -3.0727806e-05, 4.9699645, 0.011766292, 0.029342886, 0.005204536, -11.235979, -1.573, 7.232, -7.393)
+transform = Transform3D(-2.8675926, -7.5832474e-10, 9.798088e-07, 0, 4.9699593, 0.019561157, -2.506929e-07, 0.008674224, -11.207706, -1.573, 7.232, -7.3929996)
 
 [node name="Sketchfab_Scene2" parent="Models" unique_id=1828458702 instance=ExtResource("3_w0sup")]
-transform = Transform3D(-0.7307763, 0, -1.3965355, 0, 2.1137655, 0, 20.516039, 0, -0.049744263, -6.525051, 7.211685, 6.071292)
+transform = Transform3D(-8.973533e-07, 0, -1.3974212, 0, 2.1137655, 0, 20.52905, 0, -6.108322e-08, -3.823505, 7.211685, 6.071292)
 
 [node name="Sketchfab_Scene3" parent="Models" unique_id=1357251019 instance=ExtResource("3_w0sup")]
-transform = Transform3D(-0.66470975, 0, -1.4023374, 0, 2.1137655, 0, 18.661264, 0, -0.049950935, -5.4134774, 7.211685, -27.546614)
+transform = Transform3D(-8.162271e-07, 0, -1.4032267, 0, 2.1137655, 0, 18.6731, 0, -6.133699e-08, -3.832501, 7.211685, -27.546616)
 
 [node name="Sketchfab_Scene4" parent="Models" unique_id=1090233517 instance=ExtResource("3_w0sup")]
-transform = Transform3D(-0.4748847, 0, -1.4238647, 0, 2.1137655, 0, 13.332059, 0, -0.050717726, 5.2137237, 7.211685, -24.662447)
+transform = Transform3D(-5.8313236e-07, 0, -1.4247677, 0, 2.1137655, 0, 13.340513, 0, -6.227857e-08, 2.7691407, 7.211685, -26.978264)
 
 [node name="Sketchfab_Scene6" parent="Models" unique_id=1750295481 instance=ExtResource("3_w0sup")]
-transform = Transform3D(-0.18963374, 0, -1.4531853, 0, 2.1137655, 0, 5.3238363, 0, -0.05176212, 5.8069634, 7.211685, -40.308323)
+transform = Transform3D(-2.3285986e-07, 0, -1.4541069, 0, 2.1137655, 0, 5.327213, 0, -6.356103e-08, 2.7893486, 7.211685, -40.308323)
 
 [node name="Sketchfab_Scene5" parent="Models" unique_id=1377228611 instance=ExtResource("3_w0sup")]
-transform = Transform3D(-0.7616271, 0, -1.3805331, 0, 2.1137655, 0, 21.382154, 0, -0.049174264, 4.2541385, 7.211685, 5.9470453)
-
-[node name="Sketchfab_Scene9" parent="Models" unique_id=343156411 instance=ExtResource("4_s8mxv")]
-transform = Transform3D(0.5259082, 0, 0, 0, 0.2942369, 0, 0, 0, 0.2942369, -4.09044, 6.1503177, 1.5541539)
-
-[node name="Sketchfab_Scene10" parent="Models" unique_id=1708171530 instance=ExtResource("4_s8mxv")]
-transform = Transform3D(0.5259082, 0, 0, 0, 0.2942369, 0, 0, 0, 0.2942369, -4.09044, 6.1503177, -32.23414)
-
-[node name="Sketchfab_Scene13" parent="Models" unique_id=1627503133 instance=ExtResource("5_jn50n")]
-transform = Transform3D(0.8215116, 0, 0, 0, 1, 0, 0, 0, 1, -4.3187084, 6.962429, -40.892517)
+transform = Transform3D(-9.352364e-07, 0, -1.3814086, 0, 2.1137655, 0, 21.395716, 0, -6.0383286e-08, 2.759149, 7.211685, 4.840455)
 
 [node name="ObstacleSpawns" type="Node3D" parent="." unique_id=1992065892]
 

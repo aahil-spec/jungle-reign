@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://brvmuwov4af8h"]
+
+[ext_resource type="Script" uid="uid://bdtd432pggikf" path="res://scripts/obstacles/Obstacle.gd" id="1_6i4sl"]
+[ext_resource type="PackedScene" uid="uid://bqjiytavt00xa" path="res://assets/models/tree_broken_mossy_branch_pbr_photogrammetry_free.glb" id="2_ombyg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6i4sl"]
+radius = 2.0458984
+height = 19.625732
+
+[node name="SlideLog" type="Area3D" unique_id=286381609]
+script = ExtResource("1_6i4sl")
+
+[node name="Sketchfab_Scene10" parent="." unique_id=1300238288 instance=ExtResource("2_ombyg")]
+transform = Transform3D(33.205376, 0, 0, 0, 38.17731, 0, 0, 0, 38.890987, 0, 0.6168566, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2086668681]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0.20324707, 3.1397257, 0)
+shape = SubResource("CapsuleShape3D_6i4sl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Sketchfab_Scene10"]
