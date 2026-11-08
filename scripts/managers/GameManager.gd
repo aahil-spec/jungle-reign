@@ -21,6 +21,11 @@ func change_state(new_state:GameState):
 	current_state=new_state
 	if current_state==GameState.RUNNING:
 		get_tree().paused=false
+	elif current_state==GameState.GAME_OVER:
+		SaveManager.permanent_coins+=current_run_coins
+		if current_score>SaveManager.best_score:
+			SaveManager.best_score=current_score
+		SaveManager.save_game()
 	emit_signal("state_changed",current_state)
 	
 func _process(delta: float):

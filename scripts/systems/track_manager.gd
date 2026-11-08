@@ -75,3 +75,7 @@ func _spawn_segment():
 func _remove_oldest_segment():
 	var segment=active_segments.pop_front()
 	segment.queue_free()
+
+
+func _on_close_shop_btn_pressed() -> void:
+	pass # Replace with function body.

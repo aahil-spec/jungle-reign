@@ -4,6 +4,8 @@ extends Area3D
 class_name PowerUpItem
 
 @export var magnet_duration:float=10.0
+var base_duration:float=5.0
+var upgraded_duration=base_duration+(SaveManager.upgrades["magnet_level"]*2.0)
 
 func _process(delta: float):
 	rotate_x(2.0*delta)
