@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bhl8ff5dubrxa"]
+
+[node name="way_19" type="Node3D" unique_id=1763118126]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=761317638]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1251645022]
