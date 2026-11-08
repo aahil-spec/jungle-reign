@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7bbna5ok6vvf"
-path="res://.godot/imported/dirty_ground_floor_01 (1).glb-56bba74b80779c7409ee79ae041be5a7.scn"
+uid="uid://bhj3onhw1frhe"
+path="res://.godot/imported/sandstone_tiled_texture.glb-b8c7beb23fb4ebac71cc0c65c4aa1672.scn"
 
 [deps]
 
-source_file="res://assets/models/dirty_ground_floor_01 (1).glb"
-dest_files=["res://.godot/imported/dirty_ground_floor_01 (1).glb-56bba74b80779c7409ee79ae041be5a7.scn"]
+source_file="res://assets/models/sandstone_tiled_texture.glb"
+dest_files=["res://.godot/imported/sandstone_tiled_texture.glb-b8c7beb23fb4ebac71cc0c65c4aa1672.scn"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://comrm6jmb4m5f"
-path.s3tc="res://.godot/imported/dirty_ground_floor_01 (1)_0.jpg-da4fc6e34a01215735a46852b2e3c85f.s3tc.ctex"
+uid="uid://b2ll0n800oo3e"
+path.s3tc="res://.godot/imported/stone_pillar_0.jpg-ea3153dc3847259be6dab45eabdaefb7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ec1ce9b64883f6990c0b47d9c6b691e5"
+"md5": "76e3d6504961f872c3fb18df8feed142"
 }
 
 [deps]
 
-source_file="res://assets/models/dirty_ground_floor_01 (1)_0.jpg"
-dest_files=["res://.godot/imported/dirty_ground_floor_01 (1)_0.jpg-da4fc6e34a01215735a46852b2e3c85f.s3tc.ctex"]
+source_file="res://assets/models/stone_pillar_0.jpg"
+dest_files=["res://.godot/imported/stone_pillar_0.jpg-ea3153dc3847259be6dab45eabdaefb7.s3tc.ctex"]
 
 [params]
 
