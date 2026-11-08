@@ -12,6 +12,7 @@ class_name TrackSegment
 @export var powerup_chance:float=0.1
 @onready var powerup_spawn=$PowerUpSpawn
 @export var powerup_scenes:Array[PackedScene]
+
 func _ready():
 	if not obstacle_scenes.is_empty() and randf()>=obstacle_chance:
 		_spawn_obstacle()

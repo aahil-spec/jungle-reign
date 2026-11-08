@@ -52,6 +52,11 @@ theme_override_fonts/font = ExtResource("1_0mwgc")
 theme_override_font_sizes/font_size = 36
 text = "0"
 
+[node name="MultiplierLabel" type="Label" parent="SafeArea/TopRightLayout/CoinPanel/CoinHBox" unique_id=1453147210]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78431374, 0.64705884, 0, 1)
+text = "(2X)"
+
 [node name="ScorePanel" type="PanelContainer" parent="SafeArea/TopRightLayout" unique_id=1689504558]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wh2we")
