@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://cakmjvb8gq4nb"]
 
-[ext_resource type="PackedScene" uid="uid://cvu5mhvi4ea83" path="res://scenes/player/player.tscn" id="1_r64e7"]
 [ext_resource type="PackedScene" uid="uid://lr2p3m3jj2t7" path="res://assets/models/end_of_the_path.glb" id="2_7nhgm"]
 [ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/models/ruin_wall.glb" id="3_3a14v"]
 [ext_resource type="PackedScene" uid="uid://dxmoatag65jf8" path="res://assets/models/old_tree.glb" id="4_yv38g"]
 [ext_resource type="PackedScene" uid="uid://clynjoctqx3gx" path="res://assets/models/jungle_tree.glb" id="5_bi2id"]
-[ext_resource type="PackedScene" uid="uid://drs6i5nhulpc6" path="res://assets/models/tree_branch.glb" id="6_x045y"]
 
 [node name="way_3" type="Node3D" unique_id=2114515470]
 
@@ -15,9 +13,6 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=700204403]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3515625, -0.5258789)
 size = Vector3(17, 0.296875, 88.94824)
-
-[node name="Player" parent="." unique_id=1100361978 instance=ExtResource("1_r64e7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.247818, 39.41221)
 
 [node name="Models" type="Node3D" parent="." unique_id=1800714732]
 
@@ -119,6 +114,3 @@ transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.60
 
 [node name="Sketchfab_Scene77" parent="Models" unique_id=761518740 instance=ExtResource("5_bi2id")]
 transform = Transform3D(366.81894, 0, 0, 0, 366.81894, 0, 0, 0, 366.81894, -7.6053476, 0.24842809, 32.915142)
-
-[node name="Sketchfab_Scene12" parent="Models" unique_id=652072545 instance=ExtResource("6_x045y")]
-transform = Transform3D(0.5541723, 0, 0, 0, 0.2843315, 0, 0, 0, 0.2843315, -4.1759024, -0.4711455, 10.432666)
