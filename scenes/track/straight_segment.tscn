@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://eq05dokv07vm" path="res://assets/models/ruin_wall.glb" id="3_w0sup"]
 [ext_resource type="PackedScene" uid="uid://wt3fbdmlfsxv" path="res://scenes/obstacles/jump_log.tscn" id="4_4i3lr"]
 [ext_resource type="PackedScene" uid="uid://dgnkvhsanso8s" path="res://scenes/powerups/magnet_item.tscn" id="4_w0sup"]
+[ext_resource type="PackedScene" uid="uid://ccb02f3mau32l" path="res://scenes/obstacles/spike_obstacle.tscn" id="5_82su1"]
 [ext_resource type="PackedScene" uid="uid://ccjprb3xc5uba" path="res://scenes/powerups/shield_item.tscn" id="6_s8mxv"]
 [ext_resource type="PackedScene" uid="uid://cb22o5gruopge" path="res://scenes/powerups/multiplier_item.tscn" id="8_jn50n"]
 [ext_resource type="PackedScene" uid="uid://dy104rh5rrles" path="res://scenes/powerups/boost_item.tscn" id="9_4i3lr"]
 
 [node name="StraightSegment" type="Node3D" unique_id=395727918]
 script = ExtResource("1_3vvgm")
-obstacle_scenes = Array[PackedScene]([ExtResource("2_k5nas"), ExtResource("3_jn50n"), ExtResource("4_4i3lr")])
+obstacle_scenes = Array[PackedScene]([ExtResource("2_k5nas"), ExtResource("3_jn50n"), ExtResource("4_4i3lr"), ExtResource("5_82su1")])
 coin_scene = ExtResource("3_5imb7")
 powerup_scenes = Array[PackedScene]([ExtResource("6_s8mxv"), ExtResource("4_w0sup"), ExtResource("8_jn50n"), ExtResource("9_4i3lr")])
 

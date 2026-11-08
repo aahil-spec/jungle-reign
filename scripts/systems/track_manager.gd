@@ -46,13 +46,7 @@ func _spawn_segment():
 	var random_index=randi()%segment_scenes.size()
 	var segment_instance=segment_scenes[random_index].instantiate()
 	add_child(segment_instance)
-	if active_segments.is_empty():
-		segment.global_position=Vector3.ZERO
-	else:
-		var last_segment=active_segments.back()
-		var exit_point=last_segment.get_node("ExitPoint")
-		segment.global_position=exit_point.global_position
-	active_segments.append(segment)
+	
 	segment_instance.global_position=next_spawn_position
 	active_segments.append(segment_instance)
 	var exit_point=segment_instance.get_node("ExitPoint")

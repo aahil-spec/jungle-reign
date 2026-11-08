@@ -14,11 +14,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4662437, 0.2772827, 6.5864105)
 size = Vector3(17.817558, 0.44543457, 98.533356)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1089056526]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4662437, -0.25316513, -10.970809)
-operation = 2
-size = Vector3(17.817558, 4.337164, 6.0397587)
-
 [node name="Sketchfab_Scene" parent="CSGCombiner3D" unique_id=643805616 instance=ExtResource("1_xn2cm")]
 transform = Transform3D(-0.09217945, -0.99574244, 0, 0.99574244, -0.09217945, 0, 0, 0, 1, 1.5756421, -0.87161636, 19.596823)
 
@@ -54,9 +49,6 @@ transform = Transform3D(-0.015433313, 0, -0.64854586, 0, 2.3462017, 0, 34.006733
 
 [node name="Sketchfab_Scene12" parent="CSGCombiner3D" unique_id=1111100381 instance=ExtResource("2_drauv")]
 transform = Transform3D(-0.015433313, 0, -0.64854586, 0, 2.3462017, 0, 34.006733, 0, -0.00029432971, 3.578083, 0.40453815, 23.565321)
-
-[node name="Sketchfab_Scene" parent="." unique_id=1946505931 instance=ExtResource("3_hy5pu")]
-transform = Transform3D(-6.115126, 0, 0.008702698, 0, 3.3418846, 0, -0.010993088, 0, -4.8410506, -1.569489, 0.57718945, -28.063606)
 
 [node name="Sketchfab_Scene2" parent="." unique_id=1121307314 instance=ExtResource("3_hy5pu")]
 transform = Transform3D(6.007426, 0, -0.14879726, 0, 3.3418846, 0, 0.08398993, 0, 10.642811, -1.7242553, 0.57718945, 22.842934)

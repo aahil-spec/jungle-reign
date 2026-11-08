@@ -35,6 +35,8 @@ var is_boosting:bool=false
 @onready var camera:Camera3D=$CameraPivot/Camera3D
 
 @onready var shield_timer:Timer=$ShieldTimer
+
+var is_ziplining:bool=false
 func _ready():
 	target_x=0.0
 	position.x=0.0
@@ -67,11 +69,11 @@ func _input(event:InputEvent):
 	elif event.is_action_pressed("move_right") and current_lame<2:
 		current_lame+=1
 		_update_target_x()
-	if event.is_action_pressed("jump") and is_on_floor() and not is_sliding:
+	if event.is_action_pressed("jump") and is_on_floor() and not is_sliding and not is_ziplining:
 		velocity.y=jump_force
 		anim_state.travel("Jump")
 		
-	if event.is_action_pressed("slide") and is_on_floor() and not is_sliding:
+	if event.is_action_pressed("slide") and is_on_floor() and not is_sliding and not is_ziplining:
 		_start_slide()
 		
 func _update_target_x():
@@ -82,7 +84,10 @@ func _handle_lane_switching(delta:float):
 	global_position.x=new_x
 	
 func _handle_vertical_movement(delta:float):
-	if not is_on_floor():
+	if is_ziplining:
+		velocity.y=-1.5
+		
+	elif not is_on_floor():
 		velocity.y-=gravity*delta
 	elif velocity.y<0:
 		velocity.y=0.0
@@ -145,3 +150,12 @@ func _on_shield_timer_timeout():
 	if has_shield:
 		break_shield()
 		
+func start_zipline():
+	is_ziplining=true
+	anim_state.travel("HangingIdle")
+	current_lame=1
+	_update_target_x()
+	
+func end_zipline():
+	is_ziplining=false
+	anim_state.travel("Jump")
